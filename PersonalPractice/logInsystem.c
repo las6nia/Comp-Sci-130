@@ -6,8 +6,8 @@ int main(void)
     char deny[2];
     char created_username;
 
-    char username = "Las6nia";
-    char password = "P@piluis201";
+    char username;
+    char password;
 
     printf("Enter Username, otherwise\n");
     printf("if you don't have one, enter 'n': \n");
