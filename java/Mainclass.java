@@ -1,4 +1,4 @@
-package instructor1;
+package class2;
 
 public class MainClass {
 
