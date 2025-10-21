@@ -5,7 +5,7 @@ public class module2New {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		//Chapyter 2
+		//Chapter 2
 		//chapter 4 on textbook (if you have it)
 		// if/else and switch statements
 		
