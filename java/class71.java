@@ -1,136 +1,258 @@
-package Lecture7;
+package MainClass;
 import java.util.Scanner;
 
-//3 LIBRARIES - MATH, STRING, CHARACTER 
-public class Class7 {
+
+public class MainClass {
+
 	public static void main(String[] args) {
-	Scanner input = new Scanner(System.in);
-	
-				//Strings, capital S
-	// dataType: String: a data type that is used to declare a variable, where,
-	//it is able to store a text, sequence of character (boolean is a string)
-	//%s is for strings
-	
-	
-	//do 1 - declarea a string variable named state
-	
-	//string is a data type used to store text, names, and others - sequence of characters
-	String state;
-	//do 2 - how can we assign a value for a string
-	state = "Wisconsin"; //note: the value should be placed between double quotation
-	
-	
-	//do 3 - US - declare a string variable named major and assigned computer science
-	String major;
-	major = "Computer Science";
-	
-	
-	//do 4 - write a statement that displays the value of the variable state
-	System.out.printf("State = %s\n",state);
-	
-	//do 5, write a statement that displays major
-	System.out.printf("Major = %s\n",major);
-
-		
-								//PART 2 //STRING
-	//Question = how to read a value from the user??
-	//Answer = we still use scanner library
-	// 2 option, .next(), and .nextLine()
-	
-	String city;
-	//code to read the value of city from user
-	System.out.print("Enter your City: ");
-	city = input.next();		//Option 1 - using .next()
-	
-	
-	System.out.printf("your city is %s\n",city);
-
-					//re-do the above code using .nextLine();
-	String city;
-	System.out.print("Enter your City: ");
-	city = input.nextLine(); 		//option 2 - using .nextLine() until user clicks 'enter'
-	
-	System.out.printf("your city is %s\n",city);
-	
-	
-	//PART: ------------READING THE FULL NAME OF THE USER AND PROCESSING IT-----------
-	String fullName;				//full name has 2 words, first name and last name
-	// write a code that reads the full name from the user and store it into the variable fullName
-	System.out.print("Enter your full name: ");
-	fullName = input.nextLine();
-	System.out.printf("Hello, %s. Nice to meet you\n",fullName);
-	
-	//TASK 1 - DISPLAY THE NUMBER OF CHARACTERS IN THE INPUTED FULL NAME
-	System.out.printf("The number of characters in your full name is: 	%d\n",fullName.length());
-	System.out.printf("You have this amount of numbers in Wisconsin: %d\n","Wisconsin".length());
-	
-	System.out.printf("The first character in your full name is '%c' \n",fullName.charAt(0)); //char is the one at index = 0
-	
-	//display the last character of fullName
-	System.out.printf("The last character in your full name is '%c'\n",fullName.charAt(fullName.length()-1));
-																//index of the very last one***practice****
-																// you can use %s to use, but keep c for char
-	//let us try an invalid index
-	//Try to access the letter at index 100 of full name
-//System.out.printf("The index (100 )of your full name is: %c\n",fullName.charAt(100)); //run time error, out of bounds
-	
-	
-//System.out.printf("The character at index 100, in your full name is: %c",fullName.charAt(fullName.length()-5)); //study this!!!!!
-							//task 3 - Display the inputed full name in upper case format
-	System.out.printf("Your name in capital letters is this code is: %s\n)",fullName.toUpperCase());
-	System.out.printf("Your name in lower letters is this code is: %s\n)",fullName.toLowerCase());
-	
-					//After using toLowerCase or toUpperCase
-	System.out.printf("Your full name after all changes is %s\n",fullName);
-	
-	String UpperName = fullName.toLowerCase();
-	System.out.printf("this is your name after the change: %s\n",fullName);
-	//you can re-declare the same variable to plan to keep the updated changes to other 
-
-	
-								//TRIM
-	String greet = "   Welcome to Green Bay!!   ";
-		greet = greet.trim();
-	System.out.printf(greet);
-	
-	
-	
-	
-	
-	
-
-	
-	
-  				PART 1// RANDOMS AND 
-
 		Scanner input = new Scanner(System.in);
 		
-		//finding ranges in random values 
-		double myFirstRandom = Math.random();
-		System.out.printf("The first random is %.1f\n",myFirstRandom);
-		//second try
-		double mySecondRandom = 2 + 3 * Math.random();
-		//display the generated value number
-		System.out.printf("The first random is %.1f\n",mySecondRandom);
+		//Math, String, and *****other library**** library
 		
-		//try third
-		double myThirdRandom = 4 * Math.random(); //-5
-		System.out.printf("The first random is %.1f\n",myThirdRandom);
-		//you can cast the range from the usual float to int in a random value
+	//part 1 - Math Library, already installed,no need to import
 		
-		//let the below code makes n INTERGER random number by using the casting approach
-		int myFourthRandom = (int)(3+4 * Math.random()); //(int) is the casting from double to interger
+		System.out.printf("Math.ceil(2.3) = %.2f\n",Math.ceil(2.3));  //be careful, use f string to display ceil (rounding) as it will show as an double
+		System.out.printf("Math.ceil(2.7) = %.2f\n",Math.ceil(2.7));
+		System.out.printf("Math.ceil(-2.7) = %.2f\n\n",Math.ceil(-2.7));
+//floor - double
+//ceil - double
+		System.out.printf("Math.floor(2.3) = %.2f\n",Math.floor(2.3));  //be careful, use f string to display ceil (rounding) as it will show as an double
+		System.out.printf("Math.floor(2.7) = %.2f\n",Math.floor(2.7));
+		System.out.printf("Math.floor(-2.7) = %.2f\n\n",Math.floor(-2.7));
 		
-		System.out.printf("The first random is %d\n",myFourthRandom);
+//to the power
+		System.out.printf("4 to the power of 3 = %.2f\n\n",Math.pow(4,3));
+//Square Root
+		System.out.printf("The square root of 4 is = %.2f\n\n",Math.sqrt(4));
 		
-										//practice at home to extend the random number
-		//write a statement to simulate 
-		int dice = (int)(1 + 6 * Math.random());     //cast from float to int
-		System.out.printf("Your rolled the dice to a number %d\n",dice);
+		System.out.printf("4 to the power of -3 = %.2f\n",Math.pow(4,-3));
+		System.out.printf("The square root of 4 is = %.2f\n\n",Math.sqrt(4));
+		
+		//	-	-	-	-	-	-	-	-	-	-	--	-	-	-	-	-	-	-	-	-//
+//Math.max()
+		System.out.printf("Max.math(4,10) = %d \n",Math.max(4,10)); // if the 2 values are intergers are intergers, it will also return interger
+		System.out.printf("Max.math(43.10,10.5) = %.2f \n",Math.max(4,10.50));   //the values will now be double 
+							//lookout for format specifier
+//Math.min()
+		System.out.printf("Max.min(4,10) = %d \n",Math.min(4,10));
+		
+//Double and int values
+		System.out.printf("Max.min(4,10.10) = %.2f \n",Math.min(4,10.10)); //INT , Double
+		
+		//MOD for float - study!!!!
+// Math.fma(0, 0, 0)
 
+		System.out.printf("|-2.4| = %.2f\n", Math.abs(-2.4));
+		System.out.printf("|2.4| = %.2f\n\n", Math.abs(2.4));
+		System.out.printf("|-2| = %d \n", Math.abs(-2)); // why does it print in %d instead of of %f? - ask later 
+		
+		
+		
+		//example: assume the radius of a circle us 2,55, find the area of the circle using math library
+		
+	double radius = 2.55, area;
+	
+	area = Math.PI * Math.pow(radius, 2);
+	
+	System.out.printf("the area of the circle is: %.2f", area);
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/*	
+		// Class 6 - re-write using the SWITCH structure using the code from class 5
+		//INSTEAD OF USING IF, ELSE, ELSE IF
+
+		int num1, num2;
+		char typeOfOperation;
+		
+		System.out.print("Enter Num1: ");
+		num1 = input.nextInt();
+		
+		System.out.print("Enter Num2: ");
+		num2= input.nextInt();
+		
+		System.out.print("Enter your type of operation: ");
+		typeOfOperation = input.next().charAt(0); 
+		
+		
+		switch(typeOfOperation)
+		{
+		case '+':
+			System.out.printf("%d + %d is: %d",num1,num2, (num1 + num2));
+		break;
+		case '-':
+			System.out.printf("%d - %d is: %d",num1,num2, (num1 - num2));
+		break;
+		case '*':
+			System.out.printf("%d * %d is: %d",num1,num2, (num1 * num2));
+		break;
+		case '/':
+			System.out.printf("%d / %d is: %d",num1,num2, (num1 / num2));
+		break;
+		case '%':
+			System.out.printf("%d %% %d is: %d",num1,num2, (num1 % num2));
+		break;
+		default:
+			System.out.printf("Enter a valid character");
+			break;
+		}
+		
+*/
+		
+							/*QUESTION: how could we hande the or (||) or operator in switch structure?
+								if (var == valuex || var ==valuey)
+									case valuex : case vakye y:
+							*/
+		/*
+		//TASK 9 - DO THIS SWITCH STATEMENT
+		int myVar;
+		System.out.print("Enter the value for myVar: ");
+		myVar = input.nextInt();
+		
+		//objective - when myVar = 9 or 10 print out GB
+		//				when myVar = 5 or 15 = print 'Madison'
+		//				When myVar = 20 = print(Appleton)
+		//				When myVar != anything = print(Wisconsin)
+		
+		switch(myVar) 
+		{ //start of the switch
+		
+		case 9: case 10:         (myVar == 9 || myVar ==10):    - DO NOT DO THIS  ---- : - Or  
+			System.out.print("Green Bay");
+			break;
+		case 5: case 15:
+			System.out.print("Madison");
+			break;
+		
+		case 20:
+			System.out.print("Appleton");
+			break;
+		
+		default:
+			System.out.print("Wisconsin");
+			break;
+			
+		
+			
+		}//end of switch
+		
+		
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		//NOTE: 
+		// WE MAY have an 'if statement' inside a switch case
+		
+		//month and year, how days we have in that month
+		
+		//exercise 4 - Write a java application that lets teh user enter a year and checks whether it is a leap year. 
+		// a year is a lep year if its divisible by 4 but not by 100, of if it's divisible by 400
+		
+	/*
+//assuming there's 30 days in a month
+		int year;
+		int month;
+		System.out.printf("Enter the month(#) and year with a space in middle: ");
+		month = input.nextInt();
+		year = input.nextInt();
+		
+		switch(month)
+		{//start of switch 
+		case 1:
+			System.out.printf("January of %d has 31 days ",year);
+		
+		case 2:
+			if (year % 4 == 0 && year % 100 != 0 || (year % 400 ==0)) 
+			{
+				System.out.printf("February had 29 days in the year %d", year);
+			}
+			else
+			{
+				System.out.printf("February of %d had 28 days", year);
+			}
+		break;
+			
+		case 3:
+			System.out.printf("March of %d had 31 days ",year);
+			break;
+		
+		case 4:
+			System.out.printf("April of %d had 30 days ",year);
+			break;
+		
+		case 5:
+			System.out.printf("May of %d had 31 days ",year);
+			break;
+		
+		case 6:
+			System.out.printf("June of %d had 30 days ",year);
+			break;
+		default:
+			System.out.printf("I don't know this month");
+			break;
+			
+		
+		
+		}//end of switch
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 
+		System.out.printf("Enter a year: ");
+		year = input.nextInt();
+		
+						//demorgan's law
+					//digital logic - AND & OR
+		if (year % 4 == 0 && year % 100 != 0 || (year % 400 ==0)) 
+		{
+			System.out.printf("%d is a leap year!", year);
+		}
+		else
+		{
+			System.out.printf("%d is NOT a leap year!", year);
+		}
+*/	
+		
+		
 	}
-
 }
