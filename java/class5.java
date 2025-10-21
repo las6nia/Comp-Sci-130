@@ -1,169 +1,49 @@
 package MainClass;
 import java.util.Scanner;
 
-
 public class MainClass {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
-		//Math, String, and *****other library**** library
-		
-	//part 1 - Math Library, already installed,no need to import
-		
-		System.out.printf("Math.ceil(2.3) = %.2f\n",Math.ceil(2.3));  //be careful, use f string to display ceil (rounding) as it will show as an double
-		System.out.printf("Math.ceil(2.7) = %.2f\n",Math.ceil(2.7));
-		System.out.printf("Math.ceil(-2.7) = %.2f\n\n",Math.ceil(-2.7));
-//floor - double
-//ceil - double
-		System.out.printf("Math.floor(2.3) = %.2f\n",Math.floor(2.3));  //be careful, use f string to display ceil (rounding) as it will show as an double
-		System.out.printf("Math.floor(2.7) = %.2f\n",Math.floor(2.7));
-		System.out.printf("Math.floor(-2.7) = %.2f\n\n",Math.floor(-2.7));
-		
-//to the power
-		System.out.printf("4 to the power of 3 = %.2f\n\n",Math.pow(4,3));
-//Square Root
-		System.out.printf("The square root of 4 is = %.2f\n\n",Math.sqrt(4));
-		
-		System.out.printf("4 to the power of -3 = %.2f\n",Math.pow(4,-3));
-		System.out.printf("The square root of 4 is = %.2f\n\n",Math.sqrt(4));
-		
-		//	-	-	-	-	-	-	-	-	-	-	--	-	-	-	-	-	-	-	-	-//
-//Math.max()
-		System.out.printf("Max.math(4,10) = %d \n",Math.max(4,10)); // if the 2 values are intergers are intergers, it will also return interger
-		System.out.printf("Max.math(43.10,10.5) = %.2f \n",Math.max(4,10.50));   //the values will now be double 
-							//lookout for format specifier
-//Math.min()
-		System.out.printf("Max.min(4,10) = %d \n",Math.min(4,10));
-		
-//Double and int values
-		System.out.printf("Max.min(4,10.10) = %.2f \n",Math.min(4,10.10)); //INT , Double
-		
-		//MOD for float - study!!!!
-// Math.fma(0, 0, 0)
 
-		System.out.printf("|-2.4| = %.2f\n", Math.abs(-2.4));
-		System.out.printf("|2.4| = %.2f\n\n", Math.abs(2.4));
-		System.out.printf("|-2| = %d \n", Math.abs(-2)); // why does it print in %d instead of of %f? - ask later 
+		int num1 , num2;
+		char typeOfOperation; //for the possible values are: + , -, /, *, %
 		
+		// step 1: read inputs from the user
+		System.out.print("Enter 2 numbers and the type of operation (+,-,/, *, %)");
+		System.out.print("example: 4 5 *\n");
 		
-		
-		//example: assume the radius of a circle us 2,55, find the area of the circle using math library
-		
-	double radius = 2.55, area;
-	
-	area = Math.PI * Math.pow(radius, 2);
-	
-	System.out.printf("the area of the circle is: %.2f", area);
-		
-		
-		
-		
-		
-		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-/*	
-		// Class 6 - re-write using the SWITCH structure using the code from class 5
-		//INSTEAD OF USING IF, ELSE, ELSE IF
-
-		int num1, num2;
-		char typeOfOperation;
-		
-		System.out.print("Enter Num1: ");
 		num1 = input.nextInt();
-		
-		System.out.print("Enter Num2: ");
-		num2= input.nextInt();
-		
-		System.out.print("Enter your type of operation: ");
-		typeOfOperation = input.next().charAt(0); 
+		num2 = input.nextInt();
+		typeOfOperation = input.next().charAt(0); //type of operation from the user
 		
 		
-		switch(typeOfOperation)
+		if (typeOfOperation =='+') 
 		{
-		case '+':
-			System.out.printf("%d + %d is: %d",num1,num2, (num1 + num2));
-		break;
-		case '-':
-			System.out.printf("%d - %d is: %d",num1,num2, (num1 - num2));
-		break;
-		case '*':
-			System.out.printf("%d * %d is: %d",num1,num2, (num1 * num2));
-		break;
-		case '/':
-			System.out.printf("%d / %d is: %d",num1,num2, (num1 / num2));
-		break;
-		case '%':
-			System.out.printf("%d %% %d is: %d",num1,num2, (num1 % num2));
-		break;
-		default:
-			System.out.printf("Enter a valid character");
-			break;
+		System.out.printf("%d + %d is: %d",num1,num2, (num1 + num2));	
 		}
 		
-*/
+		else if (typeOfOperation == '-')
+		{
+		System.out.printf("%d - %d is: %d", num1,num2, (num1 - num2));	
+		}
+		else if (typeOfOperation == '/')
+		{
+		System.out.printf("%d / %d is: %d", num1,num2, (num1 / num2));	
+		}
 		
-							/*QUESTION: how could we hande the or (||) or operator in switch structure?
-								if (var == valuex || var ==valuey)
-									case valuex : case vakye y:
-							*/
-		/*
-		//TASK 9 - DO THIS SWITCH STATEMENT
-		int myVar;
-		System.out.print("Enter the value for myVar: ");
-		myVar = input.nextInt();
+		else if (typeOfOperation == '*')
+		{
+		System.out.printf("%d * %d is: %d",num1,num2, (num1 * num2));	
+		}
+		else if (typeOfOperation == '%')
+		{
+		System.out.printf("%d %% %d is: %d", num1,num2, (num1 % num2));	
+		}
 		
-		//objective - when myVar = 9 or 10 print out GB
-		//				when myVar = 5 or 15 = print 'Madison'
-		//				When myVar = 20 = print(Appleton)
-		//				When myVar != anything = print(Wisconsin)
-		
-		switch(myVar) 
-		{ //start of the switch
-		
-		case 9: case 10:         (myVar == 9 || myVar ==10):    - DO NOT DO THIS  ---- : - Or  
-			System.out.print("Green Bay");
-			break;
-		case 5: case 15:
-			System.out.print("Madison");
-			break;
-		
-		case 20:
-			System.out.print("Appleton");
-			break;
-		
-		default:
-			System.out.print("Wisconsin");
-			break;
-			
-		
-			
-		}//end of switch
-		
-		
-		*/
+		else {
+		System.out.printf("%c is an invalid input in the mentioned format!",typeOfOperation);		
+		}
 		
 		
 		
@@ -172,72 +52,36 @@ public class MainClass {
 		
 		
 		
-		//NOTE: 
-		// WE MAY have an 'if statement' inside a switch case
 		
-		//month and year, how days we have in that month
+		
+/*
+		//Q = how could we read in a single character from the user? 
+		//A = By using the Scanner library by using the code below: 
+		// input.next().charAt(0);
+		
+		//read in a single character from the user
+		
+		char x;
+		
+		System.out.print("Enter a single character: ");
+		x = input.next().charAt(0);
+		
+		System.out.printf("Yout inputed char '%c'",x);
+		
+
+		
+
+		
+		
+		
 		
 		//exercise 4 - Write a java application that lets teh user enter a year and checks whether it is a leap year. 
 		// a year is a lep year if its divisible by 4 but not by 100, of if it's divisible by 400
 		
-	/*
+		
 //assuming there's 30 days in a month
 		int year;
-		int month;
-		System.out.printf("Enter the month(#) and year with a space in middle: ");
-		month = input.nextInt();
-		year = input.nextInt();
 		
-		switch(month)
-		{//start of switch 
-		case 1:
-			System.out.printf("January of %d has 31 days ",year);
-		
-		case 2:
-			if (year % 4 == 0 && year % 100 != 0 || (year % 400 ==0)) 
-			{
-				System.out.printf("February had 29 days in the year %d", year);
-			}
-			else
-			{
-				System.out.printf("February of %d had 28 days", year);
-			}
-		break;
-			
-		case 3:
-			System.out.printf("March of %d had 31 days ",year);
-			break;
-		
-		case 4:
-			System.out.printf("April of %d had 30 days ",year);
-			break;
-		
-		case 5:
-			System.out.printf("May of %d had 31 days ",year);
-			break;
-		
-		case 6:
-			System.out.printf("June of %d had 30 days ",year);
-			break;
-		default:
-			System.out.printf("I don't know this month");
-			break;
-			
-		
-		
-		}//end of switch
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 		System.out.printf("Enter a year: ");
 		year = input.nextInt();
 		
@@ -251,8 +95,100 @@ public class MainClass {
 		{
 			System.out.printf("%d is NOT a leap year!", year);
 		}
-*/	
 		
 		
+		
+		
+		
+	//Write a program where 3 inputs are entered and the largest number is displayed
+		
+
+		double input1, input2, input3;
+		
+		//step 1 - get inputs from user
+		System.out.print("Enter 3 numbers, all numbers MUST be separated by a single space: ");
+		
+		//scanner keeps reading until it hits either a space or end of the line
+		input1 = input.nextDouble();
+		input2 = input.nextDouble();
+		input3 = input.nextDouble();
+		
+		//develop the if structure to make a decision for the greatest number
+		if (input1 > input2 && input1 >input3)
+		{
+			System.out.printf("%.2f is the greatest number",input1);
+		}
+		else if (input2> input1 && input2 >input3)
+		{
+			System.out.printf("%.2f is the greatest number",input2);
+		}
+		else
+		{
+			System.out.printf("%.2f is the grest number",input3);
+		}
+		
+		// index of value will determine which one comes first 
+		
+		
+		  
+		  
+		  
+		  
+		  
+			understanding which index will be on whos place goes when it comes to determine the same value number 
+			understanding arrays and indexes 
+			is it read from left to right in the back code? 
+			is it ever read from right to left in a list?
+			*******the first one that comes true will be the first one to print********
+		*/
+
+		// list  = {2, 15, 15 , 10}
+		// 15 on space [2] comes first
+		// 15 on space [3] comes second 
+		
+		// arrays 
+		
+		
+		
+		
+		
+			
+		
+		/*
+				//applying OR || and AND &&
+					//demorgan's law
+		int score; //user input
+		
+		//get and declare variable
+	
+		System.out.print("Enter an interger: ");
+		score = input.nextInt();
+		
+		if (score < 0  || score>100)
+		{
+			System.out.printf("%d is an invalid score",score);
+		}
+		else if (score >= 90 && score <= 100) 
+		{	
+		System.out.printf("Excellent: %d has a grade of A!",score);
+		}
+		else if (score <90 && score>=80)
+		{
+			System.out.printf("Very good, %d has a grade of B!",score);
+		}
+		else if (score <80 && score>=60)
+		{
+			System.out.printf("decent, %d has a grade of C.",score);
+		}
+		else //last case, no more cases after this (condition - 60 > score >=0, display F)
+		{
+			System.out.printf("%d has a grade of F, try next time",score);
+		}
+		
+	*/	
+		
+		
+
 	}
+
 }
