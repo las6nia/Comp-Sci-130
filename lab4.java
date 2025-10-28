@@ -1,79 +1,74 @@
-package Labs;
+package Lab4;
 import java.util.Scanner;
 
-
-
-public class Lab4 {
+public class main {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		//Lab 4 - Sentinel- controlled iterations
+		//Coin sorter	
 		
-		String userInput;
-		double q = .25; //quarters
-		double d = .10; //dimes
-		double n = .5; //nickle
-		double p = .1; //pennies
+		//Good things - passes case 1 and 2 but not case 3
+		String coins;
+		double q = .25; //quarter
+		double d = .10; //dime
+		double n = .05; //nickle
+		double p = 0.01; //penny
+
+		int qCounter = 0;
+		int dCounter = 0;
+		int nCounter = 0;
+		int pCounter = 0;
 		
-		int quarterCounter = 0;
-		int dimeCounter = 0;
-		int nickleCounter = 0;
-		int pennieCounter = 0;
-		
-		double totalValue = 0;
-		int notACoin = 0;
-		int coinCount = 0;
-		
-		
-		System.out.print("Enter coin code: \n");
-		userInput = input.nextLine();
-		userInput = userInput.toLowerCase();
-		
-		int index  = userInput.length()-1;
-		char copy = userInput.charAt(index);
-		
-		while (index <= 0) {
-			//get a copy of the character indexed by the current index
-			//Note to self = try to find the correct logic to get the reverse input read, if user = char, maybe convert to char
-			if (userInput.charAt(index) == 'q') {
-				q+= q;
-				totalValue += q;
-				
-			}
-			else if (userInput.charAt(copy) == 'd'){
-				d+=d;
-				totalValue += d;
-			}
-			else if (userInput.charAt(copy) == 'n'){
-				n+=n;
-				totalValue += n;
-			}
-			else if (userInput.charAt(copy) == 'p'){
-				p+=p;
-				totalValue += p;
-			}
-			else {
-				notACoin++;
-			}
-		coinCount++; //after each loop this coint counter will count how many times it has gone through the loop
-		
-	//cointCount = 
-	//totalValue = // add the value of each increment as we go through the iterations
-	//notACoin = 
-		
-		}
-		
-		System.out.print("Coin Count: %.1f\n");
-		System.out.print("-".repeat(20));
-		
-		
-		System.out.print("\nPennies: %.2f\nNickles: %.2f\nDimes: %.2f\nQuarters: %.2f\n");
-		
-		System.out.print("-".repeat(20));
-		System.out.print("\nTOTAL VALUE: $%.2f\n");
-		System.out.printf("Number of unidentified coins: %.2f", notACoin);
+		int undefinedCoin = 0;
+		int counter = 0;
 		
 
+		System.out.print("Enter the coin code: \n");
+		coins = input.nextLine();
+		coins = coins.trim().toLowerCase(); //should I add trim to remove spaces??
+		int index =0;
+		int undefinedCoins= 0;
+		
+	while(index <= coins.length()-1) {
+		char copy = coins.charAt(index);
+		switch (copy) {
+			case ('q'):
+				qCounter++;
+				break;
+			case ('d'):
+				dCounter++;
+				break;
+			case ('n'):
+				nCounter++;
+				break;
+			case ('p'):
+				pCounter++;
+				break;
+			case ('x'):
+				break;
+			default:	
+				undefinedCoins++;
+				break;
+				}
+		
+		index++;
+	}
+
+		double add = (qCounter*q)+(nCounter*n)+(dCounter*d)+(pCounter*p);
+
+
+		System.out.printf("Coin counts:\n");
+		System.out.print("-".repeat(10));
+		System.out.printf("\nPennies: %d",pCounter);
+		System.out.printf("\nNickles: %d",nCounter);
+		System.out.printf("\nDimes: %d",dCounter);
+		System.out.printf("\nQuarters: %d\n",qCounter);
+		System.out.println("-".repeat(10));
+		System.out.printf("TOTAL VALUE: $%.2f",add); //,add
+		System.out.printf("\nNumber of unidentified coins: %d",undefinedCoins); //,undefinedCoins);
+		
+	
 	}
 
 }
-								
