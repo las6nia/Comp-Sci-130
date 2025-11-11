@@ -5,6 +5,7 @@ feel free to use them as neccesary, you are also able to close my assignments/no
 --
 
 ⚠️ class lectures of code are in the java folder⚠️
+⚠️Labs are in this folder you are seeing⚠️
 
 
 -  -  -  -  -  -  -
