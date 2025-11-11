@@ -1,79 +1,74 @@
+//Lab 5
 package Labs;
 import java.util.Scanner;
 
-
-
-public class Lab4 {
+public class lab5 {
+	static Scanner input = new Scanner(System.in); //static Scanner 
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+		// $2.00 min fee for 3 hours
+		//additional c.50 per hour after the 3 hours has passed
 		
-		String userInput;
-		double q = .25; //quarters
-		double d = .10; //dimes
-		double n = .5; //nickle
-		double p = .1; //pennies
-		
-		int quarterCounter = 0;
-		int dimeCounter = 0;
-		int nickleCounter = 0;
-		int pennieCounter = 0;
-		
-		double totalValue = 0;
-		int notACoin = 0;
-		int coinCount = 0;
+		//Maximun chrge for 24 hours is $10.00
+		//Asume that no cars parks for longer than 24 hours at the time
 		
 		
-		System.out.print("Enter coin code: \n");
-		userInput = input.nextLine();
-		userInput = userInput.toLowerCase();
+					//Task - Write an application that calculates and displays the parking charges for
+					//each customer who parked in the garage yesterday.
 		
-		int index  = userInput.length()-1;
-		char copy = userInput.charAt(index);
 		
-		while (index <= 0) {
-			//get a copy of the character indexed by the current index
-			//Note to self = try to find the correct logic to get the reverse input read, if user = char, maybe convert to char
-			if (userInput.charAt(index) == 'q') {
-				q+= q;
-				totalValue += q;
-				
-			}
-			else if (userInput.charAt(copy) == 'd'){
-				d+=d;
-				totalValue += d;
-			}
-			else if (userInput.charAt(copy) == 'n'){
-				n+=n;
-				totalValue += n;
-			}
-			else if (userInput.charAt(copy) == 'p'){
-				p+=p;
-				totalValue += p;
+		double hours;
+		System.out.print("Enter number of hours (a negative to quit): ");
+		//int but I prefer float if 2.5 hours
+		hours = input.nextDouble();
+		boolean process = true;
+		
+		while (hours == hours) {
+			if (hours <0) {
+				process = false;
+				break;
 			}
 			else {
-				notACoin++;
+				process = true;
+				//Entry
+				while (process && hours >0) {
+					int count = 0; //Test if looping
+					double newResult;
+					double result = calculateCharges(hours); //catching the value
+					
+					System.out.printf("Current charge: $%.2f,", result);
+					newResult = hours;
+					
+					System.out.printf("Total receipts: $%.2f", result);
+					
+					System.out.println("\nEnter number of hours (a negative to quit): ");
+					//int but I prefer float if 2.5 hours
+					double newHours = calculateCharges(input.nextDouble());
+					
+					newHours+= result;
+					break;
+					
+				}
+				
+				
 			}
-		coinCount++; //after each loop this coint counter will count how many times it has gone through the loop
-		
-	//cointCount = 
-	//totalValue = // add the value of each increment as we go through the iterations
-	//notACoin = 
-		
 		}
 		
-		System.out.print("Coin Count: %.1f\n");
-		System.out.print("-".repeat(20));
 		
+	
+//method - calculateCharges (to do the calculations, get hours input here)
+	
+	}
+	
+	
+	public static double calculateCharges(double hours) {
 		
-		System.out.print("\nPennies: %.2f\nNickles: %.2f\nDimes: %.2f\nQuarters: %.2f\n");
-		
-		System.out.print("-".repeat(20));
-		System.out.print("\nTOTAL VALUE: $%.2f\n");
-		System.out.printf("Number of unidentified coins: %.2f", notACoin);
-		
+		if (hours <=3) {
+			double result = hours * 2.00;
+			return result;
+		}
 
 	}
-
+	
+		
 }
-								
