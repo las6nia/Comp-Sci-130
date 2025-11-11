@@ -4,10 +4,10 @@ Hello, the purpose of this repository is to keep track of my projects and class 
 feel free to use them as neccesary, you are also able to close my assignments/notes
 --
 
-⚠️ class lectures of code are in the java folder⚠️
-⚠️Labs are in this folder you are seeing⚠️
-
-
+⚠️ class lectures of code are in the java folder Labs are in this folder you are seeing⚠️
+--
+Midterm notes under midterm notes
+--
 -  -  -  -  -  -  -
 keep in mind that I'm still atending this class so if you'd like to follow along, go for it.
   else
