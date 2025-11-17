@@ -17,56 +17,40 @@ public class lab5 {
 					//each customer who parked in the garage yesterday.
 		
 		
-		double hours;
-		System.out.print("Enter number of hours (a negative to quit): ");
-		//int but I prefer float if 2.5 hours
-		hours = input.nextDouble();
-		boolean process = true;
-		
-		while (hours == hours) {
-			if (hours <0) {
-				process = false;
-				break;
-			}
-			else {
-				process = true;
-				//Entry
-				while (process && hours >0) {
-					int count = 0; //Test if looping
-					double newResult;
-					double result = calculateCharges(hours); //catching the value
-					
-					System.out.printf("Current charge: $%.2f,", result);
-					newResult = hours;
-					
-					System.out.printf("Total receipts: $%.2f", result);
-					
-					System.out.println("\nEnter number of hours (a negative to quit): ");
-					//int but I prefer float if 2.5 hours
-					double newHours = calculateCharges(input.nextDouble());
-					
-					newHours+= result;
-					break;
-					
-				}
-				
-				
-			}
-		}
-		
-		
-	
-//method - calculateCharges (to do the calculations, get hours input here)
-	
-	}
-	
-	
-	public static double calculateCharges(double hours) {
-		
-		if (hours <=3) {
-			double result = hours * 2.00;
-			return result;
-		}
+	double totalReceipts = 0;
+        double hours;
+
+        System.out.print("Enter number of hours (a negative to quit): ");
+        hours = input.nextDouble();
+
+        while (hours >= 0) {
+
+            double charge = calculateCharges(hours);
+            totalReceipts += charge;
+
+            System.out.printf("Current charge: $%.2f, Total receipts: $%.2f\n", charge, totalReceipts);
+
+            System.out.print("Enter number of hours (a negative to quit): ");
+            hours = input.nextDouble();
+        }
+    }
+
+    // Calculates the parking charge for one customer
+    public static double calculateCharges(double hours) {
+        double baseRate = 2.00;
+        double charge;
+
+        if (hours > 3) {
+            charge = baseRate + 0.50 * (hours - 3);
+            if (charge > 10.00) {
+                charge = 10.00; // Max $10 per 24 hours
+            }
+        } else {
+            charge = baseRate;
+        }
+
+        return charge;
+    }
 
 	}
 	
