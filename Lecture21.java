@@ -50,7 +50,7 @@ public class myLibrary { //Change name to your class
 			System.out.printf("%10s%15s%25s\n", "Names", "Ages", "Gpa");
 			System.out.printf("%10s%15s%25s\n",	"----","---", "---");
 			for (int index = 0; index < studentCount; index ++) {
-				System.out.printf("%10s%15s%25s\n", names[index], ages[index], gpa[index]);
+				System.out.printf("%10s%15s%25s\n", names[index], ages[index], gpa[index]); //one's a double + one's an int
 			}
 			//Minute 25 - ended recording 
 		
