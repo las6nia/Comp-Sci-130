@@ -3,6 +3,7 @@ package Lecture20;
 public class lecture20 {
 
 	public static void main(String[] args) {
+									//Come back - Using assignment 6
 										//Arrays
 	//Task 1: write a code to do the below task = create an array named tester1 that can store  
 	//The following value, values: -2,4,7,10,9
