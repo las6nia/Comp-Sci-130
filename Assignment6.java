@@ -13,7 +13,7 @@ public class main {
 	}//end of main
 	
 	
-	public static void display() {
+	public static int display() {
 		int startingValue;
 		int differenceBetweenValues;
 		int valueToLocate;
@@ -24,6 +24,14 @@ public class main {
 		differenceBetweenValues= input.nextInt();
 		System.out.println("Enter a value to licate in the progression: ");
 		valueToLocate = input.nextInt();
+		
+		return startingValue;
+		return differenceBetweenValues;
+		return valueToLocate;
+		
+		
+		
+		
 
 		
 	}
