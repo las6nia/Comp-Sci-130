@@ -27,8 +27,10 @@ public class main {
         int[] table = new int[50];
 
         			//edit - finish adding the value to the array
-        for (int i = 0; i < 50; i++) {
-            table[i] = startingValue + (i * differenceBetweenValues);
+        int currentValue = startingValue;
+        for (int i = 0; i < 50; i++) { //adding current value from the original starting variable, assigning for table at row, and incrementing with the differenceBetweenValues
+            table[i] = currentValue;
+            currentValue += differenceBetweenValues; 
         }
 
         int index = indexPosition(table, valueToLocate);
@@ -63,7 +65,7 @@ public class main {
     }
 
     			// -----	-	-	-	-	-- Methods -	-	-	-	-	-	-	--	----	-	-	-	--
-    public static int indexPosition(int[] arr, int target) { //copied from ArrayMethods
+    public static int indexPosition(int[] arr, int target) { //arraymethods
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
