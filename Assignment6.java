@@ -55,7 +55,7 @@ public class main {
             	}
             }
 
-        // print n numbers, 10 per line
+       // printing n numbers, 10 per line **in test case**
         for (int i = 0; i < n; i++) {
             System.out.printf("%7d", table[i]); //error to get 7d, fix (come back)
             if ((i + 1) % 10 == 0) // if theincrementation of i comes to the mod of 10, add a space.
