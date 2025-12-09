@@ -21,6 +21,12 @@ public class main {
 		//printing report - image at the end of week???
 		
 		
+		//confusing: 
+//After adding an item, the number of pieces (of an item) in the store is the same as the number of pieces ordered
+		// if an item from the total pieces, remove that purchaseAmount from the active amount of however many 'adds' there are
+		
+		//use ckass20data& arrays for in class activity
+		
 		
 		
 		
