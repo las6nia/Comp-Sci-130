@@ -12,7 +12,7 @@ public class lecture20 {
 		//task 2: do test2  with double values
 		double [] test2 = {3.14,5.27,-9.8,11.2,17}; //second array 
 		//we will process all values in the array, accesing every spot from index 0 to length()-1 - last
-/*
+
 		
 							//Accesing every spot test1[#number]
 		//We visit every index in our arrays
@@ -58,7 +58,7 @@ public class lecture20 {
 											//Uses
 		//The main does tasks
 		//The other methods do needed tasks
-	*/
+
 		
 		
 		//Task 7: Redo task 1 by using the method to display array: 
