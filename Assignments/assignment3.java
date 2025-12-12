@@ -1,32 +1,29 @@
-//luis notes - edit voids from methods (return appropiate result)
-
-
-
-//-	-	-	-	-	-	--	-	-	-	--		-	-	-	-	-	-	-	
-
-package MarkV;
+package assignment3;
     import java.util.Scanner;
-    public class assignment3{
+    public class main{
     	
-    	//Needed variable names (from assignment)
-    	
-    	String itemName; //self explanatory :D
-		int pOrdered; //number of pieces ordered
-		int pInStore; //number of pieces currently in the store
-		int pSold; //number of pieces sold
-		double manufPrice; //manufacturer’s price for the item
-		double sellingPrice; //store’s selling price
-    	
+
     	//arrays needed
     	static String [ ] itemNames = new String[25];  //first array
     	static double [ ][ ] itemInfo = new double[25][5];  //second array
     	
     	
-    	public static void main(String[] args) { //start of main
-    		
+    	public static void main(String[] args) { //start of main    		
         Scanner input = new Scanner (System.in);
- 
-        ProcessCommands();
+        
+        String itemName; //self explanatory :D
+		int pOrdered; //number of pieces ordered
+		int pInStore; //number of pieces currently in the store
+		int pSold; //number of pieces sold
+		double manufPrice; //manufacturer’s price for the item
+		double sellingPrice; //store’s selling price
+		System.out.println("Enter Item Name: ");
+		itemName = input.next();
+		
+		
+		
+		
+        
         
     
     	
@@ -35,6 +32,8 @@ package MarkV;
     	
     	
     	} // end of main
+    
+    	
 
 //The Find function takes a name as the parameter. It determines 
 // whether an item with that name is in the itemNames list. If so, 
@@ -57,17 +56,18 @@ public static int FindIndexOfItem(String lookUpItem)
 	
 	
 }//end FinIndexOfItem method
-
+    }
 //The function reads and processes user’s commands. After reading a 
 // command, the next step is to call the corresponding method for each 
 // command. The method uses switch statements for that.
 //params: (none) 
 //----------------------------------------------------------------- 
+/*
 public static void ProcessCommands( )
 {//start of ProcessCommands method
  
 	String command;
-	command = input.next();
+	command = input.next
 	while (! (command.equals.ignore("Quit") //
 	{ // start of while loop (option)
 		switch ( command )
@@ -154,5 +154,5 @@ public static void ProcessDisplayCommand( )
 	
 }//end of ProcessDisplayCommand method
 
-
-}//end class 
+*/
+//}//end class 
