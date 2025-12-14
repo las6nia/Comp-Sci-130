@@ -206,7 +206,30 @@ public static void ProcessSellCommand( )
 // params: (none) 
 public static void ProcessDisplayCommand( )
 {//start of ProcessDisplayCommand method
-	
+	System.out.println("Friendly Hardware Store, Green Bay, WI, 54311");
+		System.out.println("itemName  pOrdered  pInStore  pSold  manufPrice  sellingPrice");
+		System.out.println("--------  --------  --------  -----  ----------  ------------");
+
+		double totalInventory = 0;
+		double totalItems = 0;
+
+		for (int index = 0; index < itemCount; index++)
+		{
+			System.out.printf("%10s  %8.2f  %8.2f  %6.2f  %10.2f  %12.2f%n",
+					itemNames[index],
+					itemInfo[index][0],  
+					itemInfo[index][1],  
+					itemInfo[index][2], 
+					itemInfo[index][3],  
+					itemInfo[index][4]   
+					);
+
+			totalInventory += itemInfo[index][4] * itemInfo[index][1];
+			totalItems += itemInfo[index][1];
+		}
+
+		System.out.printf("Total Inventory: $%.2f%n", totalInventory);
+		System.out.printf("Total number of items in the store: %.2f%n", totalItems);
 }//end of ProcessDisplayCommand method
 
 //----------------------------------------------------------------- 
